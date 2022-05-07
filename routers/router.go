@@ -11,13 +11,13 @@ func InitRouter() *gin.Engine {
 	r.Use(gin.Recovery())
 	gin.SetMode(gin.DebugMode)
 
-	api := r.Group("/v1/vouchers")
+	api_voucher := r.Group("/v1/vouchers")
 	{
-		api.POST("/", v1.AddVoucher)
-		api.GET("/", v1.VoucherList)
-		api.GET("/:id", v1.GetVoucher)
-		api.PUT("/:id", v1.UpdateVoucher)
-		api.DELETE("/:id", v1.DeleteVoucher)
+		api_voucher.POST("/", v1.AddVoucher)
+		api_voucher.GET("/", v1.VoucherList)
+		api_voucher.GET("/:id", v1.GetVoucher)
+		api_voucher.PUT("/:id", v1.UpdateVoucher)
+		api_voucher.DELETE("/:id", v1.DeleteVoucher)
 	}
 
 	return r
